@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Api", "RTL.TVShows.Api\RTL.TVShows.Api.csproj", "{AFD777E3-2DE8-4471-A44D-8E2CA535D434}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Domain", "RTL.TVShows.Domain\RTL.TVShows.Domain.csproj", "{3382B8B1-1DA4-4BFC-9251-492C42974583}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Service", "RTL.TVShows.Service\RTL.TVShows.Service.csproj", "{50C6A7EC-FB46-40E0-9973-045F8BEB6FE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Api.Tests", "RTL.TVShows.Api.Tests\RTL.TVShows.Api.Tests.csproj", "{E4EF84EC-DD7A-47A4-A76A-8C5E26A5EE73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Infrastructure", "RTL.TVShows.Infrastructure\RTL.TVShows.Infrastructure.csproj", "{8ABC8CCF-3185-4F8B-BB2B-AE336DB3BD85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.ScraperApp", "RTL.TVShows.ScraperApp\RTL.TVShows.ScraperApp.csproj", "{4B82BC31-9FFF-4354-A388-09CCC99A7C51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4751460-0A31-47CA-A774-B2F834BF7312}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		RTL.TVShows.proj = RTL.TVShows.proj
+		test.runsettings = test.runsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Extensions", "RTL.TVShows.Extensions\RTL.TVShows.Extensions.csproj", "{305B2038-D5EF-43F7-95E4-171D862C351E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Infrastructure.Tests", "RTL.TVShows.Infrastructure.Tests\RTL.TVShows.Infrastructure.Tests.csproj", "{6B07446A-9EA4-4C65-B0CB-A1DED289045E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Service.Tests", "RTL.TVShows.Service.Tests\RTL.TVShows.Service.Tests.csproj", "{7A393370-F73C-4A45-A09F-BEE71F88CB61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFD777E3-2DE8-4471-A44D-8E2CA535D434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD777E3-2DE8-4471-A44D-8E2CA535D434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD777E3-2DE8-4471-A44D-8E2CA535D434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD777E3-2DE8-4471-A44D-8E2CA535D434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3382B8B1-1DA4-4BFC-9251-492C42974583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3382B8B1-1DA4-4BFC-9251-492C42974583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3382B8B1-1DA4-4BFC-9251-492C42974583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3382B8B1-1DA4-4BFC-9251-492C42974583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C6A7EC-FB46-40E0-9973-045F8BEB6FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C6A7EC-FB46-40E0-9973-045F8BEB6FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C6A7EC-FB46-40E0-9973-045F8BEB6FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C6A7EC-FB46-40E0-9973-045F8BEB6FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4EF84EC-DD7A-47A4-A76A-8C5E26A5EE73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4EF84EC-DD7A-47A4-A76A-8C5E26A5EE73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4EF84EC-DD7A-47A4-A76A-8C5E26A5EE73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4EF84EC-DD7A-47A4-A76A-8C5E26A5EE73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABC8CCF-3185-4F8B-BB2B-AE336DB3BD85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABC8CCF-3185-4F8B-BB2B-AE336DB3BD85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABC8CCF-3185-4F8B-BB2B-AE336DB3BD85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABC8CCF-3185-4F8B-BB2B-AE336DB3BD85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B82BC31-9FFF-4354-A388-09CCC99A7C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B82BC31-9FFF-4354-A388-09CCC99A7C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B82BC31-9FFF-4354-A388-09CCC99A7C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B82BC31-9FFF-4354-A388-09CCC99A7C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305B2038-D5EF-43F7-95E4-171D862C351E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305B2038-D5EF-43F7-95E4-171D862C351E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305B2038-D5EF-43F7-95E4-171D862C351E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305B2038-D5EF-43F7-95E4-171D862C351E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B07446A-9EA4-4C65-B0CB-A1DED289045E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B07446A-9EA4-4C65-B0CB-A1DED289045E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B07446A-9EA4-4C65-B0CB-A1DED289045E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B07446A-9EA4-4C65-B0CB-A1DED289045E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A393370-F73C-4A45-A09F-BEE71F88CB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A393370-F73C-4A45-A09F-BEE71F88CB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A393370-F73C-4A45-A09F-BEE71F88CB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A393370-F73C-4A45-A09F-BEE71F88CB61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D44BE7B3-6CC9-4168-B97D-C943E5A56B4F}
+	EndGlobalSection
+EndGlobal
