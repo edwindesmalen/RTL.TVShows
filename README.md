@@ -26,5 +26,9 @@ New-EventLog -LogName Application -Source "RTL.TVShows.ScraperApp"
 ## Nice to haves
 - All output of the TVMaze Api [is cached](https://www.tvmaze.com/api#caching) for 60 minutes. To improve the user experience we could check if the requested data from the database is out of date and return the latest version (and update the database).
 
+## New skills aquired during this test
+- The existence and use of Polly
+- How to use MongoDB
+
 ## TODO
 - Add additional unit tests - current code coverage: ~=58%
