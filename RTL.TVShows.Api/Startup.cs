@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RTL.TVShows.Extensions.OpenApi;
 using RTL.TVShows.Infrastructure.DI;
 using RTL.TVShows.Service.DI;
 
@@ -24,6 +25,10 @@ namespace RTL.TVShows.Api
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(o => o.SerializerSettings.DateFormatString = "yyyy-MM-dd");
 
+            services.AddOpenApiDocument(OpenApiHelper.GetOpenApiDocumentSettings());
+
+            services.AddCors();
+
             services.RegisterServiceDependencies();
             services.RegisterInfrastructureDependencies(Configuration);
         }
@@ -38,10 +43,22 @@ namespace RTL.TVShows.Api
             else
             {
                 app.UseHsts();
+                app.UseHttpsRedirection();
             }
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseOpenApi();
+            app.UseSwaggerUi3(c => {
+                c.DocExpansion = "list";
+                c.AdditionalSettings["displayRequestDuration"] = true;
+            });
         }
     }
 }

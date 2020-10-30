@@ -22,11 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		test.runsettings = test.runsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Extensions", "RTL.TVShows.Extensions\RTL.TVShows.Extensions.csproj", "{305B2038-D5EF-43F7-95E4-171D862C351E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Extensions", "RTL.TVShows.Extensions\RTL.TVShows.Extensions.csproj", "{305B2038-D5EF-43F7-95E4-171D862C351E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Infrastructure.Tests", "RTL.TVShows.Infrastructure.Tests\RTL.TVShows.Infrastructure.Tests.csproj", "{6B07446A-9EA4-4C65-B0CB-A1DED289045E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Infrastructure.Tests", "RTL.TVShows.Infrastructure.Tests\RTL.TVShows.Infrastructure.Tests.csproj", "{6B07446A-9EA4-4C65-B0CB-A1DED289045E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTL.TVShows.Service.Tests", "RTL.TVShows.Service.Tests\RTL.TVShows.Service.Tests.csproj", "{7A393370-F73C-4A45-A09F-BEE71F88CB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RTL.TVShows.Service.Tests", "RTL.TVShows.Service.Tests\RTL.TVShows.Service.Tests.csproj", "{7A393370-F73C-4A45-A09F-BEE71F88CB61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
