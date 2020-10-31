@@ -17,7 +17,7 @@ namespace RTL.TVShows.Service
 			this.tvShowRepository = tvShowRepository ?? throw new ArgumentNullException(nameof(tvShowRepository));
 		}
 
-		public async Task<IEnumerable<TVShow>> GetTVShows(int pageNumber, int pageSize)
+		public async Task<IEnumerable<TVShow>> GetTVShowsAsync(int pageNumber, int pageSize)
 		{
 			IEnumerable<TVShow> result = null;
 			if (pageNumber >= 1 && pageSize >= 1)
@@ -25,7 +25,7 @@ namespace RTL.TVShows.Service
 				var tvShows = await tvShowRepository.GetTVShowsAsync();
 
 				result = tvShows
-					.Skip(pageSize * pageNumber)
+					.Skip(pageSize * (pageNumber-1))
 					.Take(pageSize)
 					.Select(t =>
 					{

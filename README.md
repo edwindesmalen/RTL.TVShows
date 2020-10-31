@@ -1,5 +1,5 @@
 # RTL TVShows App
-This application scrapes the TVMaze Api and aggregates movies and cast information in a ([Mongo](https://www.mongodb.com/)) database. The scraped data is accessible by a REST API.
+This application scrapes the [TVMaze Api](https://www.tvmaze.com/api) and aggregates movies and cast information in a ([Mongo](https://www.mongodb.com/)) database. The scraped data is accessible by a REST API.
 
 # Important
 Due to the guidelines, this solution is written in .NET Core 2.2, which isn't [supported anymore](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). I higly recommend upgrading this solution to the current LTS version (.NET Core 3.1).

@@ -49,7 +49,7 @@ namespace RTL.TVShows.Api.Tests.Controllers
         {
             // Arrange
             tVShowServiceMock
-                .Setup(mock => mock.GetTVShows(It.IsAny<int>(), It.IsAny<int>()))
+                .Setup(mock => mock.GetTVShowsAsync(It.IsAny<int>(), It.IsAny<int>()))
                 .ReturnsAsync(tVShows);
 
             var sut = CreateSut();
@@ -72,7 +72,7 @@ namespace RTL.TVShows.Api.Tests.Controllers
             };
 
             tVShowServiceMock
-                .Setup(mock => mock.GetTVShows(It.IsAny<int>(), It.IsAny<int>()))
+                .Setup(mock => mock.GetTVShowsAsync(It.IsAny<int>(), It.IsAny<int>()))
                 .ReturnsAsync(expectedTVShows);
 
             var sut = CreateSut();

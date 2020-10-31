@@ -36,6 +36,7 @@ namespace RTL.TVShows.Service.Tests
 			Assert.Throws<ArgumentNullException>(() => new ScraperService(null, tvShowRepositoryMock.Object,
 				tvMazeHttpClientMock.Object, optionsMock.Object));
 		}
+
 		[Fact]
 		public void Constructor_Throws_ArgumentNullException_When_TVShowsRepository_Is_Null()
 		{
@@ -43,6 +44,7 @@ namespace RTL.TVShows.Service.Tests
 			Assert.Throws<ArgumentNullException>(() => new ScraperService(loggerMock.Object, null,
 				tvMazeHttpClientMock.Object, optionsMock.Object));
 		}
+
 		[Fact]
 		public void Constructor_Throws_ArgumentNullException_When_HttpClient_Is_Null()
 		{
@@ -50,6 +52,7 @@ namespace RTL.TVShows.Service.Tests
 			Assert.Throws<ArgumentNullException>(() => new ScraperService(loggerMock.Object, tvShowRepositoryMock.Object,
 				null, optionsMock.Object));
 		}
+
 		[Fact]
 		public void Constructor_Throws_ArgumentNullException_When_Settings_Are_Null()
 		{

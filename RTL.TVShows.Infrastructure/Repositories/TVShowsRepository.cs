@@ -49,7 +49,7 @@ namespace RTL.TVShows.Infrastructure.Repositories
         {
             var tvShows = await GetTVShows();
             
-            return tvShows.OrderByDescending(t => t.LastModificationDate).First()?.Id;
+            return tvShows.OrderByDescending(t => t.LastModificationDate).FirstOrDefault()?.Id;
         }
 
         private async Task<IEnumerable<TVShowModel>> GetTVShows()

@@ -2,6 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp2.2</TargetFramework>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Description>This application returns aggregated movies and cast information from the [TVMaze Api](https://www.tvmaze.com/api).</Description>
 	</PropertyGroup>
 
 	<Import Project="..\RTL.TVShows.proj" />

@@ -6,6 +6,6 @@ namespace RTL.TVShows.Service.Interfaces
 {
     public interface ITVShowsService
     {
-        Task<IEnumerable<TVShow>> GetTVShows(int pageNumber, int pageSize);
+        Task<IEnumerable<TVShow>> GetTVShowsAsync(int pageNumber, int pageSize);
     }
 }

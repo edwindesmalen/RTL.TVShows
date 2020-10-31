@@ -58,7 +58,7 @@ namespace RTL.TVShows.Service
         /// <returns>The page number on which to start scraping.</returns>
         private async Task<int> GetStartPage()
         {
-            var page = 1;
+            var page = 0;
             if(settings.ProceedWhereLastLeftOff)
             {
                 var id = await tvShowRepository.GetIdByLastModifiedTVShow();
