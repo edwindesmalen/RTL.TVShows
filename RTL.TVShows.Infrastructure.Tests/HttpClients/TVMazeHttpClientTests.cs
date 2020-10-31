@@ -5,6 +5,7 @@ using Moq.Protected;
 using RTL.TVShows.Infrastructure.HttpClients;
 using RTL.TVShows.Infrastructure.Settings;
 using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
@@ -80,13 +81,39 @@ namespace RTL.TVShows.Infrastructure.Tests.HttpClients
 				ItExpr.IsAny<CancellationToken>())
 				.ReturnsAsync(new HttpResponseMessage
 				{
-					StatusCode = HttpStatusCode.InternalServerError,
+					StatusCode = HttpStatusCode.InternalServerError
 				});
 
 			var sut = CreateSut();
 
 			// Act & Assert
 			await Assert.ThrowsAsync<HttpRequestException>(() => sut.GetTVShowsByPage(It.IsAny<int>()));
+		}
+
+		[Fact]
+		public async Task GetTVShowsByPage_Returns_TVShows_When_StatusCode_Is_200()
+		{
+			// Arrange
+			var getTVShowsResponseString = "[{ \"id\":1, \"name\":\"Show1\", \"_embedded\":{\"cast\":[{\"person\":{\"id\":1,\"name\":\"Cast1\",\"birthday\":\"1979-07-17\"}}]}},\r\n{ \"id\":2, \"name\":\"Show2\", \"_embedded\":{\"cast\":[{\"person\":{\"id\":1,\"name\":\"Cast1\",\"birthday\":\"1979-07-17\"}}]}}]";
+			httpMessageHandlerMock
+				.Protected()
+				.Setup<Task<HttpResponseMessage>>(
+				"SendAsync",
+				ItExpr.IsAny<HttpRequestMessage>(),
+				ItExpr.IsAny<CancellationToken>())
+				.ReturnsAsync(new HttpResponseMessage
+				{
+					StatusCode = HttpStatusCode.OK,
+					Content = new StringContent(getTVShowsResponseString)
+				});
+
+			var sut = CreateSut();
+
+			// Act
+			var actual = await sut.GetTVShowsByPage(It.IsAny<int>());
+
+			// Assert
+			Assert.Equal(2, actual.Item1.Count());
 		}
 		#endregion
 
@@ -111,6 +138,33 @@ namespace RTL.TVShows.Infrastructure.Tests.HttpClients
 			// Act & Assert
 			await Assert.ThrowsAsync<HttpRequestException>(() => sut.GetTVShowById(It.IsAny<int>()));
 		}
-		#endregion
+
+		[Fact]
+		public async Task GetTVShowById_Returns_TVShow_When_StatusCode_Is_200()
+		{
+			// Arrange
+			var getTVShowsResponseString = "{ \"id\":1, \"name\":\"Show1\", \"_embedded\":{\"cast\":[{\"person\":{\"id\":1,\"name\":\"Cast1\",\"birthday\":\"1979-07-17\"}}]}}";
+			httpMessageHandlerMock
+				.Protected()
+				.Setup<Task<HttpResponseMessage>>(
+				"SendAsync",
+				ItExpr.IsAny<HttpRequestMessage>(),
+				ItExpr.IsAny<CancellationToken>())
+				.ReturnsAsync(new HttpResponseMessage
+				{
+					StatusCode = HttpStatusCode.OK,
+					Content = new StringContent(getTVShowsResponseString)
+				});
+
+			var sut = CreateSut();
+
+			// Act
+			var actual = await sut.GetTVShowById(It.IsAny<int>());
+
+			// Assert
+			Assert.Equal(1, actual.Id);
+			Assert.Equal("Show1", actual.Name);
+			#endregion
+		}
 	}
 }

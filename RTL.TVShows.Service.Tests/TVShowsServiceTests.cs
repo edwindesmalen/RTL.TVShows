@@ -34,10 +34,10 @@ namespace RTL.TVShows.Service.Tests
 
         #region GetTVShowsAsync
         [Theory]
-        [InlineData(1,0)]
-        [InlineData(1,-1)]
-        [InlineData(0,1)]
-        [InlineData(-1,1)]
+        [InlineData(1, 0)]
+        [InlineData(1, -1)]
+        [InlineData(0, 1)]
+        [InlineData(-1, 1)]
         public async Task GetTVShowsAsync_Returns_Null_When_PageNumber_Or_PageSize_Is_Less_Then_1(int pageNumber, int pageSize)
         {
             // Arrange
@@ -54,9 +54,12 @@ namespace RTL.TVShows.Service.Tests
         public async Task GetTVShowsAsync_Returns_TVShows_When_PageNumber_And_PageSize_Are_Correct()
         {
             // Arrange
+            var expectedCastMember1 = new Cast { Id = 1, Name = "Cast1", Birthday = new DateTime(2015, 1, 1) };
+            var expectedCastMember2 = new Cast { Id = 2, Name = "Cast2", Birthday = new DateTime(2020, 1, 1) };
+
             var expectedTVShows = new List<TVShow>() {
-                new TVShow(){ Id = 1, Name = "TVShow1", Cast = new List<Cast>{ new Cast { } } },
-                new TVShow(){ Id = 2, Name = "TVShow2", Cast = new List<Cast>{ new Cast { } } }
+                new TVShow(){ Id = 1, Name = "TVShow1", Cast = new List<Cast>{ expectedCastMember1, expectedCastMember2 } },
+                new TVShow(){ Id = 2, Name = "TVShow2", Cast = new List<Cast>() }
             };
 
             tvShowRepositoryMock
@@ -66,10 +69,11 @@ namespace RTL.TVShows.Service.Tests
             var sut = CreateSut();
 
             // Act
-            var actual = await sut.GetTVShowsAsync(1,10);
+            var actual = await sut.GetTVShowsAsync(1, 10);
 
             // Assert
             Assert.Equal(2, actual.Count());
+            Assert.Equal(expectedCastMember2.Id, actual.First().Cast.First().Id);
         }
         #endregion
     }

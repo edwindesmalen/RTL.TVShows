@@ -35,15 +35,15 @@ namespace RTL.TVShows.Service
             {
                 (IEnumerable<TVShowModel> tvShows, HttpStatusCode httpStatusCode) = await tvMazeHttpClient.GetTVShowsByPage(page);
 
-                if (httpStatusCode == HttpStatusCode.NotFound)
-                {
-                    break;
-                }
-
                 foreach (var tvShow in tvShows)
                 {
                     var tvShowWithCast = await tvMazeHttpClient.GetTVShowById(tvShow.Id);
                     tvShowRepository.UpsertTVShow(tvShowWithCast);
+                }
+
+                if (httpStatusCode == HttpStatusCode.NotFound)
+                {
+                    break;
                 }
 
                 page++;

@@ -5,12 +5,11 @@ using RTL.TVShows.Infrastructure.Mappers;
 using RTL.TVShows.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace RTL.TVShows.Infrastructure.Tests.Mappers
 {
-	public class TVShowMapperTests
+    public class TVShowMapperTests
 	{
 		private readonly Mock<IMapper<CastModel, Cast>> castMapperMock;
 
