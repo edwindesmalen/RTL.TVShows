@@ -29,6 +29,3 @@ New-EventLog -LogName Application -Source "RTL.TVShows.ScraperApp"
 ## New skills aquired during this test
 - The existence and use of Polly
 - How to use MongoDB
-
-## TODO
-- Add additional unit tests - current code coverage: ~=58%
